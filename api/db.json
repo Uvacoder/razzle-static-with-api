@@ -1,0 +1,11 @@
+[{
+  "id": "1",
+  "path": "/",
+  "title": "Frontpage",
+  "content": "Some content from frontpage"
+}, {
+  "id": "2",
+  "path": "/about",
+  "title": "About us",
+  "content": "Some content from about"
+}]

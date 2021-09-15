@@ -1,0 +1,113 @@
+{
+  "name": "razzle-static-with-api",
+  "version": "4.1.0",
+  "license": "MIT",
+  "scripts": {
+    "start": "razzle start",
+    "build": "razzle build --noninteractive && razzle export",
+    "build-server": "razzle build --noninteractive",
+    "export": "razzle export",
+    "test": "razzle test --env=jsdom",
+    "start:prod": "NODE_ENV=production node build/server.js",
+    "format": "prettier --write \"src/**/*.js\" \"razzle.config.js\" \"tailwind.config.js\"",
+    "lint": "eslint src",
+    "analyze": "ANALYZE=1 npm run build"
+  },
+  "dependencies": {
+    "@gerhardsletten/react-fetching-library": "^1.7.6",
+    "@loadable/component": "^5.15.0",
+    "@loadable/server": "^5.15.0",
+    "autoprefixer": "^10.3.4",
+    "compression": "^1.7.4",
+    "express": "^4.17.1",
+    "isomorphic-unfetch": "^3.1.0",
+    "postcss": "^8.3.6",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "react-head": "^3.4.0",
+    "react-router-dom": "^5.3.0",
+    "serialize-javascript": "^6.0.0",
+    "tailwindcss": "^2.2.15"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.12.10",
+    "@loadable/babel-plugin": "^5.13.2",
+    "@loadable/webpack-plugin": "^5.15.0",
+    "babel-eslint": "^10.1.0",
+    "babel-preset-razzle": "4.1.0",
+    "eslint": "^7.32.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "eslint-plugin-react": "^7.25.1",
+    "eslint-plugin-react-hooks": "^4.2.0",
+    "html-webpack-plugin": "^4.5.2",
+    "mini-css-extract-plugin": "^0.9.0",
+    "prettier": "^2.4.0",
+    "razzle": "4.1.0",
+    "razzle-dev-utils": "4.1.0",
+    "webpack": "^4.44.1",
+    "webpack-bundle-analyzer": "^4.4.2",
+    "webpack-dev-server": "^3.11.2"
+  },
+  "prettier": {
+    "semi": false,
+    "singleQuote": true
+  },
+  "eslintConfig": {
+    "parser": "babel-eslint",
+    "parserOptions": {
+      "ecmaFeatures": {
+        "legacyDecorators": true
+      }
+    },
+    "plugins": [
+      "prettier",
+      "react-hooks"
+    ],
+    "extends": [
+      "prettier",
+      "eslint:recommended",
+      "plugin:react/recommended"
+    ],
+    "rules": {
+      "prettier/prettier": "error",
+      "react/no-unused-prop-types": 0,
+      "react-hooks/rules-of-hooks": "error",
+      "react-hooks/exhaustive-deps": "warn"
+    },
+    "env": {
+      "browser": true,
+      "node": true,
+      "es6": true,
+      "jest": true
+    },
+    "globals": {
+      "nada": true
+    },
+    "overrides": [
+      {
+        "files": [
+          "*.test.js",
+          "*.spec.js"
+        ],
+        "rules": {
+          "react/prop-types": "off"
+        }
+      }
+    ]
+  },
+  "babel": {
+    "presets": ["razzle/babel"],
+    "plugins": ["@loadable/babel-plugin"]
+  },
+  "browserslist": {
+    "production": [
+      "defaults"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}

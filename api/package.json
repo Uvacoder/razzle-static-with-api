@@ -1,0 +1,21 @@
+{
+  "name": "api-app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "micro -l tcp://0.0.0.0:8080",
+    "graphql": "micro -l tcp://0.0.0.0:8080 graphql.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "apollo-server-micro": "^3.3.0",
+    "graphql": "^15.5.3",
+    "micro": "^9.3.4",
+    "micro-cors": "^0.1.1",
+    "micro-fork": "^3.0.0",
+    "micro-query": "^0.3.0",
+    "microrouter": "^3.1.3"
+  }
+}
